@@ -1,0 +1,15 @@
+//- Sidebar container
+
+mixin sidebar-menu(iconClass, link, text, activeClass)
+    li.sidebar-menu-item
+        a.sidebar-link(class=activeClass href=link)
+            i.fa(class=iconClass)
+            span #{text}
+
+.sidebar
+    h1.sidebar-title CRM
+    ul.sidebar-menu
+        +sidebar-menu('fa-tachometer', 'javascript:void(0);', 'Dashboard')
+        +sidebar-menu('fa-pie-chart', 'javascript:void(0);', 'Reports')
+        +sidebar-menu('fa-briefcase', 'javascript:void(0);', 'Customers', 'active')
+        +sidebar-menu('fa-calendar', 'javascript:void(0);', 'Calendar')

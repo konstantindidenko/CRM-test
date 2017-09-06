@@ -1,0 +1,27 @@
+//- Customers container
+
+mixin tabs(link, text, activeClass)
+    li.tabs-item
+        a.tabs-link(class=activeClass href=link) #{text}
+
+.main-container
+    .customers-wrap
+        img.customers-avatar(src="./src/images/customer-avatar.png" alt="customer")
+        .customers-section
+            .customers-name
+                span Max Jones
+                span.customers-status Gold
+            .customers-position Sales & Marketing
+        .customers-section
+            .customers-contact
+                .customers-contact-title phone
+                .customers-contact-info (+31) 140 175 468
+            .customers-contact
+                .customers-contact-title Address
+                .customers-contact-info Binnenweg 50, Rotterdam
+            .btn-wrap
+                a.btn(href='javascript:void(0);') create quote
+    ul.tabs
+        +tabs('javascript:void(0);', 'Overview', 'active')
+        +tabs('javascript:void(0);', 'Orders')
+        +tabs('javascript:void(0);', 'Payments')

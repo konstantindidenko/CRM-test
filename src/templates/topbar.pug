@@ -1,0 +1,23 @@
+//- TopBar container
+
+mixin breadcrums(iconClass, link, text)
+    li.breadcrums-item
+        a.breadcrums-link(href=link)
+            span #{text}
+            i.fa(class=iconClass)
+
+.topbar
+    ul.breadcrums
+        +breadcrums('fa-chevron-right', 'javascript:void(0);', 'Customers')
+        +breadcrums('fa-chevron-right', 'javascript:void(0);', 'Max Jones')
+    .topbar-section
+        form.search-wrap(action='#')
+            input.search-input(type='text' placeholder='search' id="search-input")
+            label.search-label(for="search-input")
+                i.fa.fa-search
+        .notifications
+            i.fa.fa-bell
+            span.notifications-msg 4
+        .user
+            img.user-avatar(src="./src/images/avatar.png" alt="user")
+            span.user-name Hello Lauren
