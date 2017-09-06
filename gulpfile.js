@@ -38,7 +38,7 @@ gulp.task('html', function buildHTML() {
     .pipe(pug({
         pretty: true
     }))
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('./dist'))
 });
 
 // watch task
@@ -52,11 +52,11 @@ gulp.task('watch', function() {
 gulp.task('serve', function() {
     browserSync.init({
         server: {
-            baseDir: './'
+            baseDir: './dist/'
         }
     });
 
-    gulp.watch('./*.html').on('change', browserSync.reload);
+    gulp.watch('./dist/*.html').on('change', browserSync.reload);
 });
 
 gulp.task('default', ['sass', /*'js',*/ 'html', 'watch', 'serve']);
